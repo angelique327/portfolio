@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio d'Angélique Lebon</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1d7a5;
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: #333;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      padding-top: 30px;
+    }
+
+    .hero h1 {
+      font-family: 'Georgia', serif;
+      font-size: 4em;
+      margin: 0;
+      padding: 15px 30px;
+      border: 4px solid #8e7d56;
+      border-radius: 10px;
+      color: #8e7d56;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      letter-spacing: 3px;
+    }
+
+    .hero h2 {
+      font-size: 1.5em;
+      font-weight: 300;
+      margin-top: 15px;
+      color: #a68c5e;
+      letter-spacing: 2px;
+      font-style: italic;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.2em;
+      max-width: 700px;
+      color: #555;
+    }
+
+    .navbar {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #8e7d56;
+      border-radius: 5px;
+    }
+
+    .hero-image {
+      width: 100%;
+      text-align: center;
+      margin-top: 60px; /* Pour laisser de l'espace à cause de la navbar fixe */
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .description {
+      padding-top: 100px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 30px;
+      line-height: 1.8;
+      font-size: 1.1em;
+      text-align: justify;
+    }
+
+    .bonne-visite {
+      text-align: center;
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .banniere-blanche {
+      background-color: white;
+      padding: 200px 100px;
+      text-align: center;
+    }
+
+    .titre-projets {
+      font-size: 2em;
+      font-weight: bold;
+      color: #333;
+      margin-top: -150px;
+      margin-bottom: 20px
+      text-align: center;
+      margin-left: 20px;
+    }
+    .galerie-projets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cadre-projet {
+  display: block;
+  width: calc(25% - 20px); /* 4 cadres par ligne */
+  background-color: white;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cadre-projet:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.cadre-projet img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.titre-cadre {
+  padding: 15px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#accueil">Accueil</a>
+    <a href="#mes-projets">Mes projets</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Section Accueil -->
+  <div id="accueil" class="hero-image">
+    <img src="Angélique Lebon.png" alt="Image de présentation">
+  </div>
+
+  <!-- Description -->
+  <div class="description">
+    <p>
+      Passionnée par le design web, je mets ma créativité au service de projets concrets réalisés pour mon entourage. 
+      À travers ce portfolio, je vous invite à découvrir mes réalisations, fruit de mon ambition de fusionner esthétique et fonctionnalité.
+      Mon objectif est de perfectionner mes compétences techniques et créatives au sein d’une formation professionnelle, où je pourrais approfondir mes connaissances en programmation et UI/UX.
+       Mon engagement est de transformer ma passion en un métier solide, capable d’apporter une réelle valeur ajoutée à l’univers du web design.
+    </p>
+    <p class="bonne-visite">
+      Bonne visite !
+    </p>
+  </div>
+
+  <!-- Section Mes projets -->
+  <section id="mes-projets" class="banniere-blanche">
+    <h2 class="titre-projets">Mes projets</h2>
+    <!-- Tu peux ajouter tes projets ici -->
+    <section id="mes-projets" class="galerie-projets">
+      <a href="projet1.html" class="cadre-projet">
+        <img src="placeholder1.jpg" alt="Projet 1">
+        <div class="titre-cadre">Projet 1</div>
+      </a>
+      <a href="projet2.html" class="cadre-projet">
+        <img src="placeholder2.jpg" alt="Projet 2">
+        <div class="titre-cadre">Projet 2</div>
+      </a>
+      <a href="projet3.html" class="cadre-projet">
+        <img src="placeholder3.jpg" alt="Projet 3">
+        <div class="titre-cadre">Projet 3</div>
+      </a>
+      <a href="projet4.html" class="cadre-projet">
+        <img src="placeholder4.jpg" alt="Projet 4">
+        <div class="titre-cadre">Projet 4</div>
+      </a>
+    </section>
+      </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="padding: 60px 20px; text-align: center;">
+    <h2>Contact</h2>
+    <p>Email : angelique.lebon34@outlook.fr </p>
+    <p> 06 26 33 00 05 </p>
+  </section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
