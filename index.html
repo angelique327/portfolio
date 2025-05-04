@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Accès privé</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      text-align: center;
+      padding-top: 100px;
+    }
+    #container {
+      background: white;
+      max-width: 400px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="password"] {
+      padding: 10px;
+      width: 100%;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background: #8e7d56;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <h2>Entrez le mot de passe</h2>
+    <input type="password" id="password" placeholder="Mot de passe" />
+    <button onclick="checkPassword()">Valider</button>
+    <p class="error" id="errorMsg"></p>
+  </div>
+
+  <script>
+    const correctPassword = "10071998"; // <-- Modifie ici ton mot de passe
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === correctPassword) {
+        window.location.href = "Portfolio.html"; // Redirige vers ton vrai site
+      } else {
+        document.getElementById("errorMsg").textContent = "Mot de passe incorrect.";
+      }
+    }
+  </script>
+
+</body>
+</html>
 
