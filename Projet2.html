@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> l'Association Nou lé là </title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 10px;
+      background-color: #f5f5f5;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+    }
+
+    #description {
+      text-align: center;
+      padding: 20px;
+      background-color: #fafafa;
+      font-size: 1.1em;
+    }
+
+    #carrousel {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .carrousel-images {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carrousel-images img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 2em;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .nav-button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
+
+    .titre-projet {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .sous-titre-projet {
+      text-align: center;
+      font-size: 1.5em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .description-projet {
+      font-size: 1.2em;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .sous-titre-projet {
+        font-size: 1.2em;
+      }
+
+      .description-projet {
+        font-size: 1em;
+        padding: 10px;
+      }
+
+      #carrousel {
+        height: 50vh; /* moitié moins haut sur mobile */
+      }
+
+      .carrousel-images img {
+        height: 50vh;
+      }
+
+      .nav-button {
+        font-size: 1.5em;
+        padding: 10px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <section id="fiche-technique">
+      <h1 class="titre-projet">l'Association Nou lé là</h1>
+      <h2 class="sous-titre-projet">Projet : Site web pour l'Association Nou Lé Là</h2>
+      <p class="description-projet">
+J'ai conçu un site web pour l'Association Nou Lé Là, qui réunit la communauté réunionnaise à Béziers autour de la culture créole. Le site a été développé avec HTML et CSS en utilisant Visual Studio Code. Mon objectif était de créer une plateforme conviviale pour les membres, avec une navigation fluide et un design dynamique.
+
+Les fonctionnalités incluent :
+
+Une bannière dynamique pour capter l'attention dès l'arrivée sur la page
+
+Un carrousel d'images pour mettre en avant les événements de l'association
+
+Des liens externes pour rediriger les visiteurs vers des partenaires et des ressources
+
+Des boutons interactifs pour un accès facile aux différentes sections
+
+Une galerie photos pour partager les moments forts de l'association
+
+Le site est entièrement responsive, offrant une expérience optimale sur mobile et desktop. Ce projet m'a permis de mettre en pratique mes compétences en développement front-end et de créer une interface intuitive et esthétique pour les utilisateurs.
+Voir le site ici 
+<a href="https://angelique327.github.io/Noulela/" target="_blank">Voir le site ici</a>  
+  </section>
+
+  <section id="carrousel">
+    <div class="carrousel-images" id="carrouselTrack">
+      <img src="imag1.png.jpg" alt="Exemple 1" />
+      <img src="imag2.png.jpg" alt="Exemple 2" />
+      <img src="imag3.png.jpg" alt="Exemple 3" />
+      <img src="imag4.png.jpg" alt="Exemple 3" />
+      <img src="imag5.png.jpg" alt="Exemple 3" />
+      <img src="imag6.png.jpg" alt="Exemple 3" />
+      <img src="imag7.png.jpg" alt="Exemple 3" />
+    </div>
+    <button class="nav-button prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="nav-button next" onclick="changeSlide(1)">&#10095;</button>
+  </section>
+  <script>
+    let index = 0;
+  
+    // Fonction de changement de slide
+    function changeSlide(direction) {
+      const track = document.getElementById('carrouselTrack');
+      const total = track.children.length;
+      index = (index + direction + total) % total;
+      track.style.transform = `translateX(-${index * 100}vw)`;
+    }
+  
+    // Ajout des événements tactiles
+    let startX = 0;
+    let endX = 0;
+    const track = document.getElementById('carrouselTrack');
+  
+    // Gestion du début du touché (début du swipe)
+    track.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+  
+    // Gestion de la fin du touché (fin du swipe)
+    track.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe();
+    });
+  
+    // Fonction de gestion du swipe
+    function handleSwipe() {
+      const diff = startX - endX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          changeSlide(1); // swipe gauche
+        } else {
+          changeSlide(-1); // swipe droite
+        }
+      }
+    }
+  
+  </script>  
+</body>
+</html>
